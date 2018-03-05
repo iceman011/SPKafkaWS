@@ -9,7 +9,7 @@ function setConnected(connected) {
     else {
         $("#conversation").hide();
     }
-    $("#greetings").html("");
+    $("#vehicle-logs").html("");
 }
 
 function connect() {
@@ -18,10 +18,10 @@ function connect() {
     stompClient.connect({}, function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/greetings', function (greeting) {
-        	console.log("client received msg");
-        	alert(showGreeting(greeting));
-            //showGreeting(JSON.parse(greeting.body).content);
+        stompClient.subscribe('/topic/greetings', function (message) {
+			var parsed_msg = JSON.parse(message.body);
+			console.log("client parsed msg "+parsed_msg+" VID > "+parsed_msg.vehicle_id + " Event >" +parsed_msg.event);
+			showVehicleLog(parsed_msg.vehicle_id,parsed_msg.event,parsed_msg.timestamp);
         });
     });
 }
@@ -38,8 +38,17 @@ function sendName() {
     stompClient.send("/app/hello", {}, JSON.stringify({'name': $("#name").val()}));
 }
 
-function showGreeting(message) {
-    $("#greetings").append("<tr><td>" + message + "</td></tr>");
+function showVehicleLog(vehicleid,event,timestamp) {
+date = new Date(timestamp)toUTCString();// * 1000),
+datevalues = [
+   date.getFullYear(),
+   date.getMonth()+1,
+   date.getDate(),
+   date.getHours(),
+   date.getMinutes(),
+   date.getSeconds(),
+];
+    $("#vehicle-logs").append("<tr><td>" + datevalues + "</td><td>"+ vehicleid + "</td><td>" + event +"</td></tr>");
 }
 
 $(function () {

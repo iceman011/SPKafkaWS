@@ -17,20 +17,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spboot.service.KafkaRec;
 import com.spboot.service.KafkaSender;
+import com.kstream.WordCountKStream;
 
 
 @RestController
 @ComponentScan({ "com.spboot" })
+@ComponentScan({ "com.kstream" })
 //@RequestMapping(value = "/hellokafka/")
 public class KafkaWebController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaRec.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaWebController.class);
 	
 		@Autowired
 		KafkaSender kafkaSender;
 
 		@Autowired
 		KafkaRec kafkaRec;
+		
+		@Autowired
+		WordCountKStream wordsKS;
 		
 		@GetMapping(value = "/home")
 		public String home() {
@@ -58,5 +63,10 @@ public class KafkaWebController {
 			return "OK";
 		}
 		
+		@GetMapping(value = "/hellokafka/initkstream")
+		public String initKStream() {
+			wordsKS.runStream();
+			return "OK";
+		}
 	    
 	}

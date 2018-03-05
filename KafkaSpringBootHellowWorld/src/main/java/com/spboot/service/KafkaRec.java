@@ -32,7 +32,7 @@ public class KafkaRec {
 	  public void receive(ConsumerRecord<?, ?> consumerRecord) {
 	    LOGGER.info("received payload='{}'", consumerRecord.toString());
 	    latch.countDown();
-	    wsController.sendWSMessage(consumerRecord.toString());
+	    wsController.sendWSMessage(consumerRecord.value().toString());
 	   
 	  }
 	}
