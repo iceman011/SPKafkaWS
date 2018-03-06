@@ -7,6 +7,8 @@ import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStreamBuilder;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -65,8 +67,8 @@ private static final Logger LOGGER = LoggerFactory.getLogger(WordCountKStream.cl
 		KStream<String,String> words = wordLines.stream(stringSerde, stringSerde, topic);
 		//https://stackoverflow.com/questions/39327868/print-kafka-stream-input-out-to-console
 		
-        
-           words.flatMapValues(value -> Arrays.asList(pattern.split(value.toLowerCase())))
+		words.flatMapValues(value -> Arrays.asList( (new JSONObject(value)).getJSONArray("") ))
+		   //words.flatMapValues(value -> Arrays.asList(pattern.split(value.toLowerCase())))
                 .filter((key, value) -> value.trim().length() > 0)
                 .map((key, value) -> new KeyValue<>(value, value))
                 .countByKey("vehicle_id")

@@ -285,3 +285,445 @@
 2018-03-06 03:10:06,792 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
 2018-03-06 03:10:07,676 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520334607676,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
 2018-03-06 03:10:10,625 INFO n.a.d.j.g.JsonDataGenerator [Thread-2] Shutdown Hook Invoked.  Shutting Down Loggers
+2018-03-06 03:21:11,228 INFO n.a.d.j.g.JsonDataGenerator [main] Overriding Simulation Config file from command line to use [ vehicle_streamingSim.json ]
+2018-03-06 03:21:11,231 DEBUG n.a.d.j.g.JsonDataGenerator [main] Creating Simulation Runner using Simulation Config [ vehicle_streamingSim.json ]
+2018-03-06 03:21:11,628 INFO n.a.d.j.g.JsonDataGenerator [main] Adding Kafka Producer with properties: {type=kafka, broker.server=localhost, broker.port=9092, topic=hello_topic, sync=false}
+2018-03-06 03:21:11,789 INFO n.a.d.j.g.JsonDataGenerator [main] Adding Log4JLogger Producer
+2018-03-06 03:21:11,805 INFO n.a.d.j.g.SimulationRunner [main] Adding EventGenerator for [ VehicleTracking,vehicle_streamingWF.json ]
+2018-03-06 03:21:11,806 INFO n.a.d.j.g.SimulationRunner [main] Starting Simulation
+2018-03-06 03:21:12,036 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ nowTimestamp,net.acesinc.data.json.generator.types.NowTimestampType ]
+2018-03-06 03:21:12,037 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ random,net.acesinc.data.json.generator.types.RandomType ]
+2018-03-06 03:21:12,038 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ date,net.acesinc.data.json.generator.types.DateType ]
+2018-03-06 03:21:12,038 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ double,net.acesinc.data.json.generator.types.DoubleType ]
+2018-03-06 03:21:12,038 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ alphaNumeric,net.acesinc.data.json.generator.types.AlphaNumericType ]
+2018-03-06 03:21:12,038 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ randomIncrementLong,net.acesinc.data.json.generator.types.RandomIncrementLongType ]
+2018-03-06 03:21:12,038 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ counter,net.acesinc.data.json.generator.types.CounterType ]
+2018-03-06 03:21:12,039 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ lastName,net.acesinc.data.json.generator.types.LastName ]
+2018-03-06 03:21:12,039 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ now,net.acesinc.data.json.generator.types.NowType ]
+2018-03-06 03:21:12,039 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ timestamp,net.acesinc.data.json.generator.types.TimestampType ]
+2018-03-06 03:21:12,041 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ firstName,net.acesinc.data.json.generator.types.FirstName ]
+2018-03-06 03:21:12,041 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ stringMerge,net.acesinc.data.json.generator.types.StringMergeType ]
+2018-03-06 03:21:12,041 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ long,net.acesinc.data.json.generator.types.LongType ]
+2018-03-06 03:21:12,042 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ integer,net.acesinc.data.json.generator.types.IntegerType ]
+2018-03-06 03:21:12,042 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ alpha,net.acesinc.data.json.generator.types.AlphaType ]
+2018-03-06 03:21:12,042 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ uuid,net.acesinc.data.json.generator.types.UuidType ]
+2018-03-06 03:21:12,043 DEBUG n.a.d.j.g.t.TypeHandlerFactory [Thread-1] Discovered TypeHandler [ boolean,net.acesinc.data.json.generator.types.BooleanType ]
+2018-03-06 03:21:12,058 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335272043,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:21:15,131 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:15,877 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335275871,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:21:19,224 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:20,145 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335280141,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:21:24,455 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:25,442 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335285436,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:21:30,335 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:30,951 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335290947,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:21:34,866 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:35,780 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335295780,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:21:39,825 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:40,738 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335300737,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:21:43,557 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:44,159 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335304155,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:21:47,559 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:48,150 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335308150,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:21:52,316 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:53,237 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335313237,"vehicle_id":"BMW","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:21:55,994 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:21:56,623 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335316622,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:21:59,868 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:00,572 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335320571,"vehicle_id":"TOYTA","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:22:04,620 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:05,147 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335325144,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:22:07,868 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:08,589 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335328585,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:22:13,464 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:14,172 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335334169,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:22:17,360 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:17,939 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335337939,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:22:20,499 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:21,483 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335341479,"vehicle_id":"FORD","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:22:26,496 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:27,481 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335347476,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:22:30,242 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:31,017 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335351016,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:22:35,758 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:36,464 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335356461,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:22:39,758 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:40,763 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335360760,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:22:44,160 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:44,981 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335364981,"vehicle_id":"TOYTA","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:22:49,509 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:50,120 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335370117,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:22:54,351 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:55,274 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335375273,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:22:57,930 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:22:58,719 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335378717,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:23:01,341 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:02,325 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335382321,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:23:05,673 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:06,662 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335386659,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:23:11,275 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:12,146 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335392143,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:23:16,510 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:17,178 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335397177,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:23:20,194 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:20,924 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335400923,"vehicle_id":"FORD","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:23:24,976 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:25,911 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335405910,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:23:29,158 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:29,832 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335409832,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:23:33,441 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:34,121 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335414117,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:23:37,612 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:38,469 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335418462,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:23:43,118 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:43,711 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335423709,"vehicle_id":"TOYTA","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:23:46,786 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:47,483 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335427481,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:23:50,331 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:51,224 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335431221,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:23:55,020 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:55,631 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335435627,"vehicle_id":"TOYTA","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:23:58,296 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:23:58,817 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335438814,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:24:02,404 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:03,312 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335443310,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:24:06,007 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:06,638 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335446637,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:24:10,675 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:11,520 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335451516,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:24:14,947 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:15,464 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335455462,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:24:18,902 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:19,859 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335459859,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:24:23,868 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:24,764 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335464763,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:24:29,599 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:30,461 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335470458,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:24:33,952 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:34,467 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335474464,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:24:39,323 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:40,227 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335480224,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:24:43,968 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:44,881 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335484878,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:24:49,703 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:50,211 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335490210,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:24:55,066 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:55,875 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335495873,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:24:58,780 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:24:59,486 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335499465,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:25:03,769 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:04,648 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335504645,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:25:07,293 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:08,127 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335508124,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:25:10,837 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:11,842 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335511838,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:25:15,317 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:16,098 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335516097,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:25:19,656 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:20,263 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335520260,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:25:24,191 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:25,153 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335525151,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:25:27,985 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:28,623 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335528620,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:25:32,984 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:33,726 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335533724,"vehicle_id":"TOYTA","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:25:37,094 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:37,913 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335537911,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:25:41,976 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:42,882 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335542878,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:25:45,900 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:46,551 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335546549,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:25:51,205 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:52,024 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335552020,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:25:56,449 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:25:57,013 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335557011,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:26:00,523 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:01,126 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335561124,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:26:04,348 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:05,253 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335565253,"vehicle_id":"BMW","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:26:08,021 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:08,712 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335568711,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:26:13,165 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:13,981 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335573977,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:26:16,890 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:17,594 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335577594,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:26:20,475 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:21,114 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335581111,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:26:25,946 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:26,633 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335586631,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:26:30,627 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:31,527 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335591525,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:26:34,704 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:35,347 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335595344,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:26:38,724 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:39,550 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335599547,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:26:44,527 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:45,300 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335605299,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:26:47,861 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:48,466 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335608466,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:26:52,687 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:53,422 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335613420,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:26:56,445 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:26:57,077 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335617077,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:26:59,991 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:00,948 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335620947,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:27:04,571 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:05,443 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335625441,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:27:09,388 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:10,011 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335630008,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:27:14,247 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:14,860 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335634857,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:27:19,068 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:19,748 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335639746,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:27:24,333 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:24,934 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335644933,"vehicle_id":"BMW","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:27:29,452 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:30,037 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335650035,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:27:33,311 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:33,882 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335653882,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:27:38,423 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:39,427 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335659406,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:27:43,598 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:44,454 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335664450,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:27:48,545 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:49,240 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335669226,"vehicle_id":"FORD","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:27:53,145 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:53,776 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335673773,"vehicle_id":"TOYTA","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:27:56,652 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:27:57,550 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335677547,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:28:02,273 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:02,884 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335682882,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:28:07,570 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:08,167 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335688164,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:28:12,375 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:13,353 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335693347,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:28:16,026 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:17,051 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335697026,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:28:19,739 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:20,403 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335700400,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:28:23,432 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:24,307 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335704306,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:28:28,063 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:28,761 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335708759,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:28:31,540 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:32,424 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335712422,"vehicle_id":"TOYTA","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:28:36,547 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:37,128 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335717122,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:28:41,148 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:41,768 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335721763,"vehicle_id":"TOYTA","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:28:46,231 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:46,740 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335726737,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:28:50,344 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:51,049 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335731047,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:28:55,138 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:28:56,137 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335736136,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:29:00,747 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:01,399 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335741398,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:29:04,879 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:05,673 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335745671,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:29:09,080 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:09,910 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335749908,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:29:13,456 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:14,043 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335753989,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:29:18,300 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:18,878 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335758869,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:29:21,406 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:22,103 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335762099,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:29:26,541 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:27,533 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335767530,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:29:31,280 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:32,001 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335771999,"vehicle_id":"FORD","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:29:35,428 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:35,958 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335775956,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:29:39,658 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:40,604 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335780602,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:29:43,142 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:43,848 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335783844,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:29:46,471 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:47,005 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335787003,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:29:51,859 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:52,755 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335792755,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:29:57,050 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:29:57,836 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335797835,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:30:01,221 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:01,863 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335801860,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:30:04,383 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:05,123 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335805123,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:30:08,204 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:09,009 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335809007,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:30:11,546 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:12,068 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335812065,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:30:14,984 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:15,897 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335815895,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:30:20,438 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:21,239 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335821236,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:30:24,393 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:24,989 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335824985,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:30:27,629 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:28,399 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335828396,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"SPEED-MSG"} ]
+2018-03-06 03:30:32,473 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:33,221 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335833220,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:30:36,047 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:36,828 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335836824,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:30:41,765 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:42,706 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335842694,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:30:47,504 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:48,208 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335848205,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:30:51,465 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:52,223 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335852221,"vehicle_id":"BMW","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:30:57,198 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:30:58,079 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335858074,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:31:01,390 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:01,951 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335861927,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:31:04,644 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:05,262 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335865261,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:07,880 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:08,417 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335868407,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:31:12,601 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:13,301 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335873275,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:17,067 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:17,681 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335877664,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:22,569 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:23,438 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335883422,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:26,308 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:27,272 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335887271,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:31,245 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:32,226 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335892226,"vehicle_id":"FORD","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:35,032 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:35,719 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335895718,"vehicle_id":"TOYTA","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:31:39,927 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:40,560 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335900545,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:44,353 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:45,251 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335905242,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:31:48,506 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:49,138 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335909137,"vehicle_id":"TOYTA","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:31:53,167 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:54,014 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335914012,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:31:56,655 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:31:57,235 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335917235,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:32:00,719 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:01,274 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335921273,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:32:05,772 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:06,669 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335926668,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"SPEED-MSG"} ]
+2018-03-06 03:32:11,669 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:12,596 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335932596,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:32:17,216 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:18,161 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335938160,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:32:23,072 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:23,967 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335943957,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:32:28,920 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:29,922 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335949907,"vehicle_id":"FORD","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:32:32,767 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:33,644 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335953643,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:32:36,302 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:36,975 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335956975,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:32:41,243 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:42,004 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335962003,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:32:45,803 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:46,743 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335966742,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"GEO-IN-MSG"} ]
+2018-03-06 03:32:50,943 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:51,683 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335971682,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:32:55,800 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:32:56,618 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335976617,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:33:00,373 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:01,321 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335981320,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"SPEED-MSG"} ]
+2018-03-06 03:33:04,389 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:05,271 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335985270,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:33:09,147 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:10,100 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335990098,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:33:14,281 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:15,048 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520335995047,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:33:19,295 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:20,089 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336000088,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"22.15","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:33:24,388 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:24,984 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336004982,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:33:29,584 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:30,130 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336010130,"vehicle_id":"FORD","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:33:33,896 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:34,790 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336014790,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:33:39,177 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:40,142 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336020142,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:33:42,903 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:43,430 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336023429,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:33:46,078 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:46,645 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336026644,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:33:51,100 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:51,959 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336031958,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:33:54,895 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:33:55,540 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336035540,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:34:00,016 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:00,884 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336040884,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:34:04,743 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:05,700 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336045699,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:34:09,502 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:10,321 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336050320,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:34:14,642 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:15,303 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336055302,"vehicle_id":"BMW","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:34:19,619 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:20,423 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336060422,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-IN-MSG"} ]
+2018-03-06 03:34:23,201 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:24,193 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336064191,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:34:29,187 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:30,172 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336070171,"vehicle_id":"BMW","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:34:33,436 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:34,205 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336074203,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:34:38,525 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:39,401 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336079399,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:34:42,854 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:43,457 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336083455,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:34:47,656 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:48,557 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336088556,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:34:53,161 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:53,991 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336093990,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:34:58,056 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:34:59,042 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336099042,"vehicle_id":"BMW","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"SPEED-MSG"} ]
+2018-03-06 03:35:02,973 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:03,703 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336103702,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:35:07,811 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:08,770 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336108769,"vehicle_id":"FORD","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:35:11,609 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:12,372 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336112371,"vehicle_id":"TOYTA","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:35:15,877 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:16,811 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336116811,"vehicle_id":"FORD","group_id":"GP3","event":"SPEED","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:35:20,142 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:21,051 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336121050,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:35:24,100 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:25,057 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336125056,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:35:28,959 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:29,798 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336129797,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:35:33,773 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:34,597 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336134597,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:35:37,473 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:38,386 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336138383,"vehicle_id":"BMW","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:35:42,926 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:43,467 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336143467,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"SPEED-MSG"} ]
+2018-03-06 03:35:48,336 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:49,272 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336149271,"vehicle_id":"FORD","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:35:53,115 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:53,631 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336153631,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"43.44","message":"GEO-IN-MSG"} ]
+2018-03-06 03:35:56,928 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:35:57,876 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336157875,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:36:00,635 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:01,542 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336161541,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"88.50","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:36:04,388 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:04,929 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336164927,"vehicle_id":"TOYTA","group_id":"GP2","event":"SPEED","objects":["Building 1"],"location":"23.33","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:36:08,420 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:09,121 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336169119,"vehicle_id":"FORD","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:36:13,009 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:13,961 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336173960,"vehicle_id":"BMW","group_id":"GP1","event":"GEO-IN","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:36:16,537 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:17,257 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336177255,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:36:19,797 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:20,707 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336180706,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-IN","objects":["Building 1"],"location":"43.44","message":"GEO-OUT-MSG"} ]
+2018-03-06 03:36:25,337 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:26,279 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336186277,"vehicle_id":"BMW","group_id":"GP3","event":"GEO-IN","objects":["Building 1"],"location":"70.88","message":"GEO-IN-MSG"} ]
+2018-03-06 03:36:30,418 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:31,147 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336191145,"vehicle_id":"TOYTA","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
+2018-03-06 03:36:34,603 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:35,507 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336195506,"vehicle_id":"TOYTA","group_id":"GP1","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:36:40,467 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:41,353 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336201353,"vehicle_id":"FORD","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"66.34","message":"GEO-IN-MSG"} ]
+2018-03-06 03:36:46,350 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:47,010 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336207009,"vehicle_id":"BMW","group_id":"GP1","event":"SPEED","objects":["Building 1"],"location":"88.50","message":"GEO-IN-MSG"} ]
+2018-03-06 03:36:51,775 TRACE n.a.d.j.g.EventGenerator [Thread-1] Generator( VehicleTracking ) generated 0.0 events/sec
+2018-03-06 03:36:52,517 DEBUG n.a.d.j.g.l.KafkaLogger [Thread-1] Sending event to Kafka: [ {"timestamp":1520336212516,"vehicle_id":"BMW","group_id":"GP2","event":"GEO-OUT","objects":["Building 1"],"location":"23.33","message":"SPEED-MSG"} ]
