@@ -1,0 +1,15 @@
+{
+    "workflows": [{
+            "workflowName": "VehicleTracking",
+            "workflowFilename": "vehicle_streamingWF.json"
+        }],
+   "producers": [{
+            "type": "kafka",
+            "broker.server": "localhost",
+            "broker.port": 9092,
+            "topic": "hello_topic",
+            "sync": false
+    },{
+        "type":"logger"
+    }]
+}
