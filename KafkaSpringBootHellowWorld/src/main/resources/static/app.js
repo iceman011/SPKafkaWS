@@ -39,7 +39,7 @@ function sendName() {
 }
 
 function showVehicleLog(vehicleid,event,timestamp) {
-date = new Date(timestamp)toUTCString();// * 1000),
+/*date = new Date(timestamp)toUTCString();// * 1000),
 datevalues = [
    date.getFullYear(),
    date.getMonth()+1,
@@ -47,8 +47,8 @@ datevalues = [
    date.getHours(),
    date.getMinutes(),
    date.getSeconds(),
-];
-    $("#vehicle-logs").append("<tr><td>" + datevalues + "</td><td>"+ vehicleid + "</td><td>" + event +"</td></tr>");
+];*/
+    $("#vehicle-logs").append("<tr><td>" + timestamp + "</td><td>"+ vehicleid + "</td><td>" + event +"</td></tr>");
 }
 
 $(function () {
