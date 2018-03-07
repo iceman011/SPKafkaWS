@@ -65,7 +65,8 @@ public class KafkaWebController {
 		
 		@GetMapping(value = "/hellokafka/initkstream")
 		public String initKStream() {
-			wordsKS.runStream();
+			//wordsKS.runStream();
+			wordsKS.createTrackingStreamsInstance();
 			return "OK";
 		}
 	    

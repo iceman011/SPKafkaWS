@@ -7,8 +7,7 @@ import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStreamBuilder;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.apache.kafka.streams.kstream.KTable;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -23,6 +22,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.json.JsonSimpleJsonParser;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -30,6 +30,25 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.apache.kafka.streams.kstream.ForeachAction;
 import org.apache.kafka.streams.kstream.KStream;
+
+import com.fasterxml.jackson.databind.JsonNode;
+
+import org.apache.kafka.common.serialization.Deserializer;
+import org.apache.kafka.common.serialization.Serde;
+import org.apache.kafka.common.serialization.Serdes;
+import org.apache.kafka.common.serialization.Serializer;
+
+import org.apache.kafka.connect.json.JsonDeserializer;
+import org.apache.kafka.connect.json.JsonSerializer;
+import org.apache.kafka.streams.KafkaStreams;
+import org.apache.kafka.streams.StreamsConfig;
+import org.apache.kafka.streams.kstream.KStream;
+import org.apache.kafka.streams.kstream.KStreamBuilder;
+import org.apache.kafka.streams.kstream.KTable;
+import org.apache.kafka.streams.processor.AbstractProcessor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import com.spboot.websocket.WSController;
 
@@ -41,8 +60,7 @@ public class WordCountKStream {
 
 private static final Logger LOGGER = LoggerFactory.getLogger(WordCountKStream.class);
 
-	@Autowired
-	 WSController wsController;
+	
 	  
     private String topic = "hello_topic";
     private KafkaStreams streams;
@@ -66,14 +84,31 @@ private static final Logger LOGGER = LoggerFactory.getLogger(WordCountKStream.cl
 		
 		KStream<String,String> words = wordLines.stream(stringSerde, stringSerde, topic);
 		//https://stackoverflow.com/questions/39327868/print-kafka-stream-input-out-to-console
-		
-		words.flatMapValues(value -> Arrays.asList( (new JSONObject(value)).getJSONArray("") ))
+		/*
+		words.flatMapValues(value -> Arrays.asList( 
+				(new JsonSimpleJsonParser()).parse(value) ))
 		   //words.flatMapValues(value -> Arrays.asList(pattern.split(value.toLowerCase())))
                 .filter((key, value) -> value.trim().length() > 0)
                 .map((key, value) -> new KeyValue<>(value, value))
                 .countByKey("vehicle_id")
                 .toStream()
                 .to(stringSerde, Serdes.Long(), "words-with-counts-" + version);
+                
+		// read the source stream
+	    
+
+	    // aggregate the new feed counts of by user
+	    final KTable<String, Long> aggregated = words
+	        // filter out old feeds
+	        //.filter((dummy, value) -> value.getIsNew())
+	        // map the user id as key
+	        .map((key, value) -> new KeyValue<>(value.get("vehicl_id"), value))
+	        // no need to specify explicit serdes because the resulting key and value types match our default serde settings
+	        .groupByKey()
+	        .count();
+	    
+	    System.out.print(" Prinitig Aggregated");
+	    aggregated.print();
 				
 			words.foreach(new ForeachAction<String, String>() {
 			public void apply(String key, String value) {
@@ -87,10 +122,91 @@ private static final Logger LOGGER = LoggerFactory.getLogger(WordCountKStream.cl
 		
 		LOGGER.info("KStream Started");
         streams.start();
+        */
     }
 
     @PreDestroy
     public void closeStream() {
         streams.close();
+    }
+    
+    
+    public  void createTrackingStreamsInstance() {
+        final Serializer<JsonNode> jsonSerializer = new JsonSerializer();
+        final Deserializer<JsonNode> jsonDeserializer = new JsonDeserializer();
+        final Serde<JsonNode> jsonSerde = Serdes.serdeFrom(jsonSerializer, jsonDeserializer);
+
+        Serde<String> stringSerde = Serdes.String();
+        Serde<Long> longSerde = Serdes.Long();
+        
+        com.kstream.JsonDeserializer<TrackingMessage> trackingDeserializer = new com.kstream.JsonDeserializer<>(TrackingMessage.class);
+        com.kstream.JsonSerializer<TrackingMessage> trackingSerializer = new com.kstream.JsonSerializer<>();
+        Serde<TrackingMessage> trackingSerde = Serdes.serdeFrom(trackingSerializer,trackingDeserializer);
+        
+        
+        Properties config = new Properties();
+        final String version = "0.2";
+        config.put(StreamsConfig.APPLICATION_ID_CONFIG, "kafka-streams-example-" + version);
+        //config.put(StreamsConfig.KEY_SERDE_CLASS_CONFIG, stringSerde.getClass().getName());
+        //config.put(StreamsConfig.VALUE_SERDE_CLASS_CONFIG, stringSerde.getClass().getName());
+        config.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        config.put(StreamsConfig.ZOOKEEPER_CONNECT_CONFIG, "localhost:2181");
+        
+        //config.put(StreamsConfig.KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
+        //config.put(StreamsConfig.VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
+        config.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        
+        KStreamBuilder builder = new KStreamBuilder();
+
+
+        KStream<String,TrackingMessage> trackingMsgStrm = builder.stream(stringSerde, trackingSerde, topic);
+        					trackingMsgStrm.map((k,v)-> new KeyValue<>(v.vehicle_id,v))
+        					.filter(TrackingMessage::filterNonNull)
+        					.to(topic);
+        
+        					        					
+        					
+
+       /*trackingMsgStrm.foreach(new ForeachAction<String, TrackingMessage>() {
+            public void apply(String key, TrackingMessage value) {
+                System.out.println(key + ": vehicle_id "+value.getVehicle_id()+" full : " + value);
+            }
+         });*/
+        
+        
+        /**KStream<String, TrackingMessage> tracMsgkParsed =
+        		trackingMsgStrm.map((k,v)-> new KeyValue<>(v.getVehicle_id(),v))
+        		//trackingMsgStrm.map(TrackingMessage::parseMessage(k,v))
+                        .filter(TrackingMessage::filterNonNull);
+                        //.through(Serdes.String(), new JsonPOJOSerde<>(TrackingMessage.class), topic);
+
+        KStream<String, TrackingMessage> tracMsgkParsed =
+        		trackingMsgStrm.map((k,v)-> new KeyValue<>(v.getVehicle_id(),v));
+        		//trackingMsgStrm.map(TrackingMessage::parseMessage(k,v))
+                        //.filter(TrackingMessage::filterNonNull);
+
+        tracMsgkParsed.foreach(new ForeachAction<String, TrackingMessage>() {
+            public void apply(String key, TrackingMessage value) {
+                System.out.println(key + ": " + value);
+            }
+         });
+        
+        KTable<String, Long> totalEventsByVehielce = trackingMsgStrm
+        		//.map(TrackingMessage::parceMessage)
+                .countByKey(Serdes.String(), "tracking-events-by-vehicle");
+        
+
+        //some print
+        totalEventsByVehielce.toStream().process(() -> new AbstractProcessor<String, Long>() {
+            @Override
+            public void process(String vehicle, Long numEvents) {
+            	LOGGER.info("Vehicle: " + vehicle + " num.events: " + numEvents);
+                //System.out.println("Vehicle: " + user + " num.events: " + numEvents);
+            }
+        });*/
+        
+
+         (new KafkaStreams(builder, config)).start();
+
     }
 }

@@ -24,6 +24,7 @@ public class KafkaRec {
 	  @Autowired
 	  WSController wsController;
 	  
+
 	  public CountDownLatch getLatch() {
 	    return latch;
 	  }
@@ -32,6 +33,9 @@ public class KafkaRec {
 	  public void receive(ConsumerRecord<?, ?> consumerRecord) {
 	    LOGGER.info("received payload='{}'", consumerRecord.toString());
 	    latch.countDown();
+	    
+	    //wsCntStrm.createTrackingStreamsInstance();
+	    
 	    wsController.sendWSMessage(consumerRecord.value().toString());
 	   
 	  }
