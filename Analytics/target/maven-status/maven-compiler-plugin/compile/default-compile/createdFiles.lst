@@ -1,0 +1,4 @@
+com/kafka/analytics/pojo/TrackingMessage.class
+com/kafka/analytics/ser/JsonPOJODeserializer.class
+com/kafka/analytics/tracking/TrackingAnalytic.class
+com/kafka/analytics/ser/JsonPOJOSerializer.class

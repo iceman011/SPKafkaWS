@@ -32,4 +32,19 @@ public class WSController {
 	  }
 
 	  
+	  public void sendWSTrackByVehicle(String msg) {
+		String JsonVehicleMsg= "{ VehiclesTracking :"+msg+"}";
+		  
+		LOGGER.info("Sending WSMessage-TrackByVehicle ='{}'", msg.toString());
+	    
+		template.convertAndSend("/topic/track/byvehicle", msg.toString());
+	  }
+	  
+	  public void sendWSTrackByGroup(String msg) {
+	    String JsonGroupMsg= "{ GroupsTracking :"+msg+"}";
+		  
+		LOGGER.info("Sending WSMessage-TrackByGroup ='{}'", msg.toString());
+	    
+		template.convertAndSend("/topic/track/bygroup", msg.toString());
+	  }
 }

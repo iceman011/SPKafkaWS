@@ -10,7 +10,6 @@
                     "vehicle_id": "random(\"BMW\",\"TOYTA\",\"FORD\")",
                     "group_id": "random(\"GP1\",\"GP2\",\"GP3\")",
                     "event": "random(\"GEO-IN\",\"GEO-OUT\",\"SPEED\")",
-                    "objects": ["Building 1"],
                     "location": "random(\"43.44,88.50\",\"23.33,66.34\",\"22.15,70.88\")",
                     "message": "random(\"GEO-IN-MSG\",\"GEO-OUT-MSG\",\"SPEED-MSG\")"
                 }],

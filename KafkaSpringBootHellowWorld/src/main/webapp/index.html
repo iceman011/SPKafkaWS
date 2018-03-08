@@ -20,6 +20,8 @@
                 <div class="form-group">
                     <label for="connect">WebSocket connection:</label>
                     <button id="connect" class="btn btn-default" type="submit">Connect</button>
+					<button id="connect_by_group" class="btn btn-default" type="submit">ConnectByGroup</button>
+					<button id="connect_by_vehicle" class="btn btn-default" type="submit">ConnectByVehicle</button>
                     <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
                     </button>
                 </div>
@@ -35,6 +37,52 @@
             </form>
         </div>
     </div>
+	<div class="row">
+        <div class="col-md-12">
+            <table id="table_track_by_group" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>RealTime Vehicle Tracking by Groups</th>
+                </tr>
+                </thead>
+                <tbody id="track_by_group">
+					<tr>
+					<td>G1</td>
+					<td>G2</td>
+					<td>G3</td>
+					</tr>
+					<tr>
+					<td id="GP1"></td>
+					<td id="GP2"></td>
+					<td id="GP3"></td>
+					</tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+	<div class="row">
+        <div class="col-md-12">
+            <table id="table_track_by_vehicle" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>RealTime Vehicle Tracking by Vehicle</th>
+                </tr>
+                </thead>
+                <tbody id="track_by_vehicle">
+					<tr>
+					<td>FORD</td>
+					<td>TOYTA</td>
+					<td>BMW</td>
+					</tr>
+					<tr>
+					<td id="FORD"></td>
+					<td id="TOYTA"></td>
+					<td id="BMW"></td>
+					</tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <table id="conversation" class="table table-striped">
@@ -48,6 +96,7 @@
             </table>
         </div>
     </div>
+	
 </div>
 </body>
 </html>

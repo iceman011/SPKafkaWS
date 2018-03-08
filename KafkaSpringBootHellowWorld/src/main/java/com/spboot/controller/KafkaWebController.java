@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spboot.service.KafkaRec;
 import com.spboot.service.KafkaSender;
-import com.kstream.WordCountKStream;
+import com.kstream.analytics.tracking.TrackingAnalytic;
 
 
 @RestController
@@ -35,7 +35,11 @@ public class KafkaWebController {
 		KafkaRec kafkaRec;
 		
 		@Autowired
-		WordCountKStream wordsKS;
+		TrackingAnalytic trackingKS;
+		
+		public static final String MAIN_TOPIC = "hello_topic";
+		public static final String GROUP_BY_TOPIC = "group_by_topic";
+		public static final String VEHICLE_BY_TOPIC = "vehicle_by_topic";
 		
 		@GetMapping(value = "/home")
 		public String home() {
@@ -49,7 +53,7 @@ public class KafkaWebController {
 		@GetMapping(value = "/hellokafka/producer")
 		public String producer(@RequestParam("message") String message) {
 			
-			kafkaSender.send("hello_topic",message);
+			kafkaSender.send(MAIN_TOPIC,message);
 			return "Message sent to the Kafka Topic java_in_use_topic Successfully";
 			
 		}
@@ -63,10 +67,12 @@ public class KafkaWebController {
 			return "OK";
 		}
 		
-		@GetMapping(value = "/hellokafka/initkstream")
-		public String initKStream() {
+		@GetMapping(value = "/hellokafka/track")
+		public String initGroupByTracking() {
 			//wordsKS.runStream();
-			wordsKS.createTrackingStreamsInstance();
+			trackingKS.trackByVehicle(MAIN_TOPIC,VEHICLE_BY_TOPIC);
+			trackingKS.trackByGroup(MAIN_TOPIC,GROUP_BY_TOPIC);
+			
 			return "OK";
 		}
 	    
