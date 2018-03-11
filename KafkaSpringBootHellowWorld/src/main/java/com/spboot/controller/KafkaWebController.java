@@ -40,6 +40,7 @@ public class KafkaWebController {
 		public static final String MAIN_TOPIC = "hello_topic";
 		public static final String GROUP_BY_TOPIC = "group_by_topic";
 		public static final String VEHICLE_BY_TOPIC = "vehicle_by_topic";
+		public static final String EVENT_BY_TOPIC = "vehicle_by_event";
 		
 		@GetMapping(value = "/home")
 		public String home() {
@@ -72,7 +73,7 @@ public class KafkaWebController {
 			//wordsKS.runStream();
 			trackingKS.trackByVehicle(MAIN_TOPIC,VEHICLE_BY_TOPIC);
 			trackingKS.trackByGroup(MAIN_TOPIC,GROUP_BY_TOPIC);
-			
+			trackingKS.trackByEvent(MAIN_TOPIC,EVENT_BY_TOPIC);
 			return "OK";
 		}
 	    

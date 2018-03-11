@@ -87,7 +87,7 @@ public class TrackingAnalytic {
 			public void apply(String key, Long value) {
 				String jsonMsg = "{\"vehicle\": \""+key+"\" ,\"count\":"+value+"}" ;
 				
-				LOGGER.info(jsonMsg);
+				//LOGGER.info(jsonMsg);
 				wsController.sendWSTrackByVehicle(jsonMsg);
 			}
 		 }); 
@@ -132,7 +132,7 @@ public class TrackingAnalytic {
 			public void apply(String key, Long value) {
 				String jsonMsg = "{\"group\": \""+key+"\" ,\"count\":"+value+"}" ;
 				
-				LOGGER.info(jsonMsg);
+				//LOGGER.info(jsonMsg);
 				wsController.sendWSTrackByGroup(jsonMsg);
 			}
 		 }); 
@@ -141,6 +141,51 @@ public class TrackingAnalytic {
         KafkaStreams kafkaStreams = new KafkaStreams(kStreamBuilder, config);
         kafkaStreams.start();
         System.out.println("Now started Kafka Tracking by Group Streams ");
+
+	}
+	
+	public void trackByEvent(String in_topic,String out_topic) {
+		
+		LOGGER.info("TrackByEvent Start");
+
+        // Create an instance of StreamsConfig from the Properties instance
+        StreamsConfig config = new StreamsConfig(getProperties("Tracking-App-By-Event"));
+		
+        // create serd (ser/deser) objects
+        final Serde < String > stringSerde = Serdes.String();
+        final Serde < Long > longSerde = Serdes.Long();
+        final Serde < TrackingMessage > trackingMessageSerde = getTrackingSerde();
+ 
+        // building Kafka Streams Model
+        KStreamBuilder kStreamBuilder = new KStreamBuilder();
+        
+        // the source of the streaming analysis is the topic with country messages
+        KStream<String, TrackingMessage> trackingStream = 
+                                       kStreamBuilder.stream(stringSerde, trackingMessageSerde, in_topic);
+ 
+        // THIS IS THE CORE OF THE STREAMING ANALYTICS:
+        // running count of countries per continent, published in topic RunningCountryCountPerContinent
+        KTable<String,Long> trackingPerGroup = trackingStream
+                                                                 .selectKey((k, country) -> country.event)
+                                                                 .countByKey("Counts");
+        
+        
+        trackingPerGroup.to(stringSerde, longSerde,  out_topic);
+        //trackingPerGroup.print(stringSerde, longSerde);
+        
+		trackingPerGroup.foreach(new ForeachAction<String, Long>() {
+			public void apply(String key, Long value) {
+				String jsonMsg = "{\"event\": \""+key+"\" ,\"count\":"+value+"}" ;
+				
+				//LOGGER.info(jsonMsg);
+				wsController.sendWSTrackByEvent(jsonMsg);
+			}
+		 }); 
+ 
+        System.out.println("Starting Kafka Tracking by Event Streams ");
+        KafkaStreams kafkaStreams = new KafkaStreams(kStreamBuilder, config);
+        kafkaStreams.start();
+        System.out.println("Now started Kafka Tracking by Event Streams ");
 
 	}
 	

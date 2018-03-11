@@ -47,4 +47,12 @@ public class WSController {
 	    
 		template.convertAndSend("/topic/track/bygroup", msg.toString());
 	  }
+	  
+	  public void sendWSTrackByEvent(String msg) {
+	    String JsonGroupMsg= "{ EventsTracking :"+msg+"}";
+		  
+		LOGGER.info("Sending WSMessage-TrackByEvent ='{}'", msg.toString());
+	    
+		template.convertAndSend("/topic/track/byevent", msg.toString());
+	  }
 }
